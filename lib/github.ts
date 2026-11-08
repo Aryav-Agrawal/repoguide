@@ -25,7 +25,7 @@ export function parseRepoUrl(input: string): { owner: string; repo: string } {
   if (!match) {
     throw new GitHubError(
       "invalid_url",
-      "Paste a link like https://github.com/owner/repo.",
+      "That link doesn't point to a GitHub repository.",
     );
   }
 
@@ -53,7 +53,7 @@ async function githubFetch(
   try {
     response = await fetch(`${GITHUB_API}${path}`, { headers, cache: "no-store" });
   } catch {
-    throw new GitHubError("github_error", "Couldn't reach GitHub. Try again in a moment.");
+    throw new GitHubError("github_error", "We couldn't reach GitHub.");
   }
 
   if (response.ok) {
@@ -67,7 +67,7 @@ async function githubFetch(
   if (response.status === 404) {
     throw new GitHubError(
       "not_found",
-      "We couldn't find that repository. Check the spelling, or it may be private.",
+      "GitHub has no public repository at that address. It may be misspelled, or it may be private.",
     );
   }
 
@@ -78,7 +78,7 @@ async function githubFetch(
 
   throw new GitHubError(
     "github_error",
-    `GitHub returned an unexpected error (status ${response.status}). Try again in a moment.`,
+    `GitHub returned an unexpected error (status ${response.status}).`,
   );
 }
 
@@ -105,9 +105,9 @@ function rateLimitMessage(response: Response): string {
 
   if (minutes !== null && Number.isFinite(minutes) && minutes > 0) {
     const unit = minutes === 1 ? "minute" : "minutes";
-    return `We've hit GitHub's rate limit. Try again in about ${minutes} ${unit}.`;
+    return `RepoGuide has used up its GitHub requests for now. The limit resets in about ${minutes} ${unit}.`;
   }
-  return "We've hit GitHub's rate limit. Try again in a few minutes.";
+  return "RepoGuide has used up its GitHub requests for now. The limit resets in a few minutes.";
 }
 
 // Only the fields we use from GitHub's "get a repository" response.
@@ -143,25 +143,45 @@ type GitHubTree = {
   tree: { path: string; type: string; size?: number }[];
 };
 
-export async function getRepoTree(
-  owner: string,
-  repo: string,
-  branch: string,
-): Promise<{ tree: TreeEntry[]; truncated: boolean }> {
+// Bigger repos are too much to explain well, and their file list alone would eat a big
+// chunk of the AI's free quota. We check this before downloading any files or calling the AI.
+export const MAX_TREE_FILES = 20_000;
+
+export async function getRepoTree(owner: string, repo: string, branch: string): Promise<TreeEntry[]> {
   const response = await githubFetch(
     `/repos/${owner}/${repo}/git/trees/${encodeURIComponent(branch)}?recursive=1`,
   );
   const data = (await response.json()) as GitHubTree;
 
+  // GitHub only cuts the list short for enormous repos (around 100,000 entries),
+  // so a cut-off list means the repo is far over our limit.
+  if (data.truncated) {
+    throw new GitHubError(
+      "too_large",
+      `This repo has well over ${MAX_TREE_FILES.toLocaleString("en-US")} files, which is more than RepoGuide can tour.`,
+    );
+  }
+
   // Keep files ("blob") and folders ("tree"). Skip submodules ("commit").
   const tree: TreeEntry[] = [];
+  let fileCount = 0;
   for (const entry of data.tree) {
     if (entry.type === "blob" || entry.type === "tree") {
       tree.push({ path: entry.path, type: entry.type, size: entry.size });
     }
+    if (entry.type === "blob") {
+      fileCount += 1;
+    }
   }
 
-  return { tree, truncated: data.truncated };
+  if (fileCount > MAX_TREE_FILES) {
+    throw new GitHubError(
+      "too_large",
+      `This repo has ${fileCount.toLocaleString("en-US")} files. RepoGuide can tour repos with up to ${MAX_TREE_FILES.toLocaleString("en-US")}.`,
+    );
+  }
+
+  return tree;
 }
 
 // Reads one file's text. The "raw" media type makes GitHub send the plain file

@@ -163,7 +163,9 @@ function keepRealPaths(paths: string[], real: Set<string>, dropped: DroppedCount
   return [...kept];
 }
 
-function cleanAnalysis(
+// Checks every path and link in the AI's answer against the real repo. The API route calls
+// this as its own "building the map" step. It doesn't depend on which AI we use.
+export function cleanAnalysis(
   raw: RepoAnalysis,
   tree: TreeEntry[],
 ): { analysis: RepoAnalysis; dropped: DroppedCounts } {
@@ -227,11 +229,9 @@ type AnalyzeInput = {
   files: FetchedFile[];
 };
 
-export async function analyzeRepo({
-  metadata,
-  tree,
-  files,
-}: AnalyzeInput): Promise<{ analysis: RepoAnalysis; dropped: DroppedCounts }> {
+// Asks the AI to explain the repo and returns its answer once it matches our schema.
+// The answer may still mention paths that don't exist: pass it through cleanAnalysis() next.
+export async function analyzeRepo({ metadata, tree, files }: AnalyzeInput): Promise<RepoAnalysis> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     console.error("GEMINI_API_KEY is not set.");
@@ -256,15 +256,15 @@ export async function analyzeRepo({
   } catch (error) {
     // 429 means we've used up Gemini's free-tier quota for the moment.
     if (error instanceof ApiError && error.status === 429) {
-      throw new AnalyzeError("ai_busy", "RepoGuide is busy, try again in a minute.");
+      throw new AnalyzeError("ai_busy", "Lots of people are using RepoGuide right now, so the AI is at its limit.");
     }
     // Log only the message. Never the request, which carries the API key.
     console.error("Gemini request failed:", error instanceof Error ? error.message : error);
-    throw new AnalyzeError("ai_error", "The AI couldn't analyze this repo. Try again in a moment.");
+    throw new AnalyzeError("ai_error", "The AI couldn't analyze this repo.");
   }
 
   if (!text) {
-    throw new AnalyzeError("ai_error", "The AI sent back an empty answer. Try again.");
+    throw new AnalyzeError("ai_error", "The AI sent back an empty answer.");
   }
 
   // Structured output makes bad JSON rare, but we still check, both the JSON itself and its shape.
@@ -272,14 +272,14 @@ export async function analyzeRepo({
   try {
     json = JSON.parse(text);
   } catch {
-    throw new AnalyzeError("ai_error", "The AI's answer came back in an unexpected shape. Try again.");
+    throw new AnalyzeError("ai_error", "The AI's answer came back in an unexpected shape.");
   }
 
   const parsed = analysisSchema.safeParse(json);
   if (!parsed.success) {
     console.error("Gemini answer failed validation:", parsed.error.message);
-    throw new AnalyzeError("ai_error", "The AI's answer came back in an unexpected shape. Try again.");
+    throw new AnalyzeError("ai_error", "The AI's answer came back in an unexpected shape.");
   }
 
-  return cleanAnalysis(parsed.data, tree);
+  return parsed.data;
 }

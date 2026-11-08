@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import type { AnalysisModule, RepoMetadata } from "@/lib/types";
 import FileLink from "./FileLink";
 
@@ -8,8 +8,18 @@ type ModulePanelProps = {
   onClose: () => void;
 };
 
-// Details for the module clicked on the map. Sits on top of the map's right side.
+// Details for the module clicked on the map. On wide screens it sits on top of the map's
+// right side; on narrow screens it sits below the map.
 export default function ModulePanel({ module, metadata, onClose }: ModulePanelProps) {
+  const panelRef = useRef<HTMLElement>(null);
+
+  // On a phone the panel opens below the map, possibly off screen, so scroll it into view.
+  // "nearest" scrolls only as far as needed: if it's already visible (as on desktop), nothing moves.
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    panelRef.current?.scrollIntoView({ block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
+  }, [module.id]);
+
   // Escape closes the panel, like most popups.
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
@@ -23,8 +33,9 @@ export default function ModulePanel({ module, metadata, onClose }: ModulePanelPr
 
   return (
     <aside
+      ref={panelRef}
       aria-label={`${module.name} details`}
-      className="absolute inset-y-0 right-0 z-10 flex w-full flex-col border-l border-line bg-surface sm:w-80"
+      className="z-10 flex flex-col border-t border-line bg-surface lg:absolute lg:inset-y-0 lg:right-0 lg:w-80 lg:border-t-0 lg:border-l"
     >
       <div className="flex items-start justify-between gap-3 border-b border-line px-5 py-4">
         <h3 className="text-base font-semibold text-pretty text-ink">{module.name}</h3>

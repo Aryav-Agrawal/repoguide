@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Same shape as components/LogoMark.tsx: one module linked to two others. -->
+  <rect width="32" height="32" rx="7" fill="#2c6a4c"/>
+  <path d="M10 16L22.5 9.5M10 16L22.5 22.5" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" opacity="0.7" fill="none"/>
+  <circle cx="9.5" cy="16" r="3.75" fill="#ffffff"/>
+  <circle cx="22.5" cy="9.5" r="3.25" fill="#ffffff"/>
+  <circle cx="22.5" cy="22.5" r="3.25" fill="#ffffff"/>
+</svg>

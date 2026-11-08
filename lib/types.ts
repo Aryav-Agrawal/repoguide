@@ -30,7 +30,6 @@ export type SelectedFileInfo = {
 export type RepoResponse = {
   metadata: RepoMetadata;
   tree: TreeEntry[];
-  truncated: boolean;
   selection: FileSelection;
 };
 
@@ -93,7 +92,8 @@ export type ApiErrorCode =
   | "empty_repo"
   | "github_error"
   | "ai_busy"
-  | "ai_error";
+  | "ai_error"
+  | "visitor_limit"; // this visitor used up their analyses for the hour
 
 export type ApiErrorBody = {
   error: {
@@ -101,3 +101,14 @@ export type ApiErrorBody = {
     message: string;
   };
 };
+
+// ---------- Live progress (streamed by /api/analyze) ----------
+
+// The four stages of an analysis, in order.
+export type AnalyzeStepId = "fetching" | "choosing" | "analyzing" | "mapping";
+
+// /api/analyze sends one of these per line (newline-delimited JSON) while it works.
+export type AnalyzeEvent =
+  | { type: "progress"; step: AnalyzeStepId; status: "active" | "done"; detail?: string }
+  | { type: "result"; data: AnalyzeResponse }
+  | { type: "error"; error: ApiErrorBody["error"] };

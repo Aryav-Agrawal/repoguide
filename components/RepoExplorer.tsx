@@ -2,18 +2,21 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import type { AnalyzeResponse, ApiErrorBody } from "@/lib/types";
+import { readNdjson } from "@/lib/ndjson";
+import type { AnalyzeEvent, AnalyzeResponse, ApiErrorBody } from "@/lib/types";
 import RepoForm from "./RepoForm";
+import ExampleRepos from "./ExampleRepos";
+import ProgressChecklist, { initialProgress, type ProgressState } from "./ProgressChecklist";
 import ErrorMessage from "./ErrorMessage";
 import RepoSummary from "./RepoSummary";
 import AnalysisSummary from "./AnalysisSummary";
 import StartHere from "./StartHere";
-import TruncatedNotice from "./TruncatedNotice";
 import FileTree from "./FileTree";
 
 // The map pulls in React Flow and dagre, which are fairly big. Loading it this way means
-// the browser only downloads that code once there's a result to show.
-const ModuleMap = dynamic(() => import("./ModuleMap"), {
+// the browser only downloads that code once someone starts an analysis.
+const loadModuleMap = () => import("./ModuleMap");
+const ModuleMap = dynamic(loadModuleMap, {
   ssr: false,
   loading: () => (
     <div className="h-[31rem] animate-pulse rounded-xl border border-line bg-surface sm:h-[37rem]" />
@@ -21,64 +24,94 @@ const ModuleMap = dynamic(() => import("./ModuleMap"), {
 });
 
 type Status = "idle" | "loading" | "success" | "error";
+type ApiError = ApiErrorBody["error"];
 
 export default function RepoExplorer() {
   const [url, setUrl] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const [progress, setProgress] = useState<ProgressState>(initialProgress);
   const [data, setData] = useState<AnalyzeResponse | null>(null);
-  const [error, setError] = useState<ApiErrorBody["error"] | null>(null);
+  const [error, setError] = useState<ApiError | null>(null);
+  // The link of the last analysis we started, so "Try again" repeats exactly that one.
+  const [lastUrl, setLastUrl] = useState("");
   // Goes up by one for every new result. Used as a key so the map and file tree start fresh,
   // even when the same repo is analyzed twice.
   const [resultNumber, setResultNumber] = useState(0);
 
-  async function handleSubmit() {
+  function fail(apiError: ApiError) {
+    setError(apiError);
+    setStatus("error");
+  }
+
+  async function runAnalysis(target: string) {
+    setUrl(target);
+    setLastUrl(target);
     setStatus("loading");
     setError(null);
+    setProgress(initialProgress());
+    // Start downloading the map's code now, while the server works, so it's ready when the result lands.
+    void loadModuleMap();
 
     try {
       const response = await fetch("/api/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url }),
+        body: JSON.stringify({ url: target }),
       });
-      const body = await response.json();
 
-      if (!response.ok) {
-        setError((body as ApiErrorBody).error);
-        setStatus("error");
+      // Problems caught before the work starts (bad link, hourly limit) come back as plain JSON.
+      if (!response.ok || !response.body) {
+        const body = (await response.json().catch(() => null)) as ApiErrorBody | null;
+        fail(
+          body?.error ?? {
+            code: "github_error",
+            message: `The server returned an unexpected error (status ${response.status}).`,
+          },
+        );
         return;
       }
 
-      setData(body as AnalyzeResponse);
-      setResultNumber((count) => count + 1);
-      setStatus("success");
+      // Otherwise the server streams one event per line as it works.
+      for await (const event of readNdjson<AnalyzeEvent>(response.body)) {
+        if (event.type === "progress") {
+          setProgress((previous) => ({
+            ...previous,
+            [event.step]: { status: event.status, detail: event.detail },
+          }));
+        } else if (event.type === "result") {
+          setData(event.data);
+          setResultNumber((count) => count + 1);
+          setStatus("success");
+          return;
+        } else {
+          fail(event.error);
+          return;
+        }
+      }
+
+      // The stream ended without a result or an error. On Vercel this happens when the
+      // analysis runs past the time limit and the server is stopped.
+      fail({ code: "ai_error", message: "The analysis stopped before it finished, probably because it took too long." });
     } catch {
-      setError({
+      fail({
         code: "github_error",
-        message: "We couldn't reach the server. Check your connection and try again.",
+        message: "We lost the connection to RepoGuide's server. Your internet connection may have dropped.",
       });
-      setStatus("error");
     }
   }
 
+  const loading = status === "loading";
+
   return (
     <div className="flex flex-col gap-6">
-      <div className="max-w-3xl">
-        <RepoForm
-          url={url}
-          onUrlChange={setUrl}
-          onSubmit={handleSubmit}
-          loading={status === "loading"}
-        />
+      <div className="flex max-w-3xl flex-col gap-4">
+        <RepoForm url={url} onUrlChange={setUrl} onSubmit={() => runAnalysis(url)} loading={loading} />
+        <ExampleRepos onPick={runAnalysis} disabled={loading} />
       </div>
 
-      {status === "loading" && (
-        <p className="text-sm text-muted" aria-live="polite">
-          Reading the code and writing your tour. This can take up to 30 seconds.
-        </p>
-      )}
+      {loading && <ProgressChecklist progress={progress} />}
 
-      {status === "error" && error && <ErrorMessage error={error} />}
+      {status === "error" && error && <ErrorMessage error={error} onRetry={() => runAnalysis(lastUrl)} />}
 
       {status === "success" && data && (
         <section aria-label="Repository tour" className="flex flex-col gap-4">
@@ -86,7 +119,6 @@ export default function RepoExplorer() {
           <AnalysisSummary summary={data.analysis.summary} />
           <ModuleMap key={`map-${resultNumber}`} analysis={data.analysis} metadata={data.metadata} />
           <StartHere steps={data.analysis.startHere} metadata={data.metadata} />
-          {data.truncated && <TruncatedNotice />}
           <FileTree key={`tree-${resultNumber}`} entries={data.tree} />
         </section>
       )}
