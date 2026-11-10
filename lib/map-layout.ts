@@ -9,7 +9,8 @@ import type { AnalysisModule, ModuleRelationship } from "./types";
 export const NODE_WIDTH = 220;
 export const NODE_HEIGHT = 72;
 
-export type ModuleNodeData = { module: AnalysisModule };
+// order: the node's place in the list, used to stagger the one-time pop-in on the map.
+export type ModuleNodeData = { module: AnalysisModule; order: number };
 export type ModuleFlowNode = Node<ModuleNodeData, "module">;
 
 export function layoutModuleMap(
@@ -30,14 +31,14 @@ export function layoutModuleMap(
 
   dagre.layout(graph);
 
-  const nodes: ModuleFlowNode[] = modules.map((item) => {
+  const nodes: ModuleFlowNode[] = modules.map((item, index) => {
     const { x, y } = graph.node(item.id);
     return {
       id: item.id,
       type: "module",
       // dagre gives the center of each node; React Flow wants the top-left corner.
       position: { x: x - NODE_WIDTH / 2, y: y - NODE_HEIGHT / 2 },
-      data: { module: item },
+      data: { module: item, order: index },
       width: NODE_WIDTH,
       height: NODE_HEIGHT,
       sourcePosition: Position.Right,

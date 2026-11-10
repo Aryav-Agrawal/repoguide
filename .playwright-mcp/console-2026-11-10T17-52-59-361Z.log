@@ -1,0 +1,741 @@
+[     333ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[     375ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  987421ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  987669ms] [LOG] [Fast Refresh] done in 352ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  988279ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  988580ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  988719ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  988821ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  988868ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  988954ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  989005ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  989080ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  989099ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  989225ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  989313ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  989334ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  989440ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  989546ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  989680ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  989792ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  990131ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  990356ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  990517ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  990640ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  990732ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  990739ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  990989ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  990992ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991131ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991237ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  991237ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991343ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991446ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991591ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991592ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-ssr] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991592ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991663ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  991688ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991688ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-ssr] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991688ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991775ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991775ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-ssr] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991776ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991884ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991885ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-ssr] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991885ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991994ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991994ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-ssr] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  991995ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  992088ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  992088ms] [ERROR] ./components/HomeOnly.tsx:4:1
+Error: Export refreshScrollAnimations doesn't exist in target module
+  2 |
+  3 | import { motion } from "motion/react";
+> 4 | import { refreshScrollAnimations } from "@/lib/smooth-scroll";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { TOUR_FADE_SECONDS } from "@/lib/tour-motion";
+  6 | import { useRepoAnalysis } from "./RepoAnalysisProvider";
+  7 |
+
+The export refreshScrollAnimations was not found in module [project]/lib/smooth-scroll.ts [app-ssr] (ecmascript).
+Did you mean to import setActiveLenis?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/HomeOnly.tsx
+    ./app/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  992088ms] [ERROR] ./components/SmoothScrollEngine.tsx:7:1
+Error: Export setScrollRefresher doesn't exist in target module
+   5 | import "lenis/dist/lenis.css";
+   6 | import { gsap, ScrollTrigger } from "@/lib/gsap";
+>  7 | import { setActiveLenis, setScrollRefresher } from "@/lib/smooth-scroll";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   8 |
+   9 | /**
+  10 |  * The actual smooth scrolling (Lenis, kept in step with GSAP ScrollTrigger).
+
+The export setScrollRefresher was not found in module [project]/lib/smooth-scroll.ts [app-client] (ecmascript).
+Did you mean to import scrollToElement?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Client Component Browser:
+    ./components/SmoothScrollEngine.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Client Component Browser]
+    ./components/SmoothScroll.tsx [Server Component]
+    ./app/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:1037
+[  992169ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[  992228ms] [LOG] [Fast Refresh] done in 54ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1134444ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1134470ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1134563ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1134674ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1134781ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1134873ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1134968ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1135079ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1135187ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1135299ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1135406ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1135515ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1135623ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1135731ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1135840ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1135948ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1136058ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1136166ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1169632ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1169645ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1169757ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js:761
+[ 1177645ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/2bopfbf4z-y6r.js:1
+[ 1634986ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/2bopfbf4z-y6r.js:1
+[ 1681450ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/2bopfbf4z-y6r.js:1
+[ 1682895ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/2bopfbf4z-y6r.js:1
+[ 1843948ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/2bopfbf4z-y6r.js:1
+[ 1993182ms] [WARNING] THREE.Clock: This module has been deprecated. Please use THREE.Timer instead. @ http://localhost:3100/_next/static/chunks/2bopfbf4z-y6r.js:1

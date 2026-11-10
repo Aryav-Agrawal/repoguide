@@ -37,7 +37,7 @@ export default function FileTreeNode({ node, depth }: FileTreeNodeProps) {
         type="button"
         onClick={() => setOpen(!open)}
         style={indent}
-        className="flex w-full items-center gap-2 py-1 pr-4 text-left font-mono text-[13px] text-ink hover:bg-accent-soft focus-visible:bg-accent-soft focus-visible:outline-none"
+        className="flex w-full items-center gap-2 py-1 pr-4 text-left font-mono text-[13px] text-ink hover:bg-accent-soft focus-visible:bg-accent-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent"
       >
         <ChevronIcon open={open} />
         <FolderIcon />

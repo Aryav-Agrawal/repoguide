@@ -1,0 +1,334 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - paragraph [ref=e4]: RepoGuide
+      - heading "Find your way around any GitHub repo." [level=1] [ref=e11]:
+        - generic [aria-hidden] [ref=e14]: Find
+        - generic [aria-hidden] [ref=e16]: your
+        - generic [aria-hidden] [ref=e18]: way
+        - generic [aria-hidden] [ref=e20]: around
+        - generic [aria-hidden] [ref=e22]: any
+        - generic [aria-hidden] [ref=e24]: GitHub
+        - generic [aria-hidden] [ref=e26]: repo.
+      - paragraph [ref=e28]: "Paste a public repo link and RepoGuide gives you a guided tour: what it does, how it's organized, and which files to read first."
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]: GitHub repo URL
+        - generic [ref=e34]:
+          - textbox "GitHub repo URL" [ref=e36]:
+            - /placeholder: https://github.com/vercel/swr
+          - button "Analyze" [ref=e38] [cursor=pointer]
+      - generic [ref=e45]:
+        - generic [ref=e46]: "Try an example:"
+        - button "expressjs/express JavaScript" [ref=e47]:
+          - generic [ref=e48]: expressjs/express
+          - generic [ref=e49]: JavaScript
+        - button "pallets/flask Python" [ref=e50]:
+          - generic [ref=e51]: pallets/flask
+          - generic [ref=e52]: Python
+        - button "spf13/cobra Go" [ref=e53]:
+          - generic [ref=e54]: spf13/cobra
+          - generic [ref=e55]: Go
+    - region "How it works" [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - heading "How it works" [level=2] [ref=e60]
+            - paragraph [ref=e61]: Three steps from a repo link to a map you can explore.
+          - list [ref=e62]:
+            - listitem [ref=e63]:
+              - generic [ref=e64]:
+                - generic [aria-hidden] [ref=e65]: "1"
+                - generic [ref=e66]:
+                  - heading "Paste a link" [level=3] [ref=e67]
+                  - paragraph [ref=e68]: Drop in any public GitHub repo URL. No sign-up, nothing to install.
+            - listitem [ref=e69]:
+              - generic [ref=e70]:
+                - generic [aria-hidden] [ref=e71]: "2"
+                - generic [ref=e72]:
+                  - heading "AI reads the code" [level=3] [ref=e73]
+                  - paragraph [ref=e74]: RepoGuide picks the files that matter most and has AI read them, so it can explain what each part does.
+            - listitem [ref=e75]:
+              - generic [ref=e76]:
+                - generic [aria-hidden] [ref=e77]: "3"
+                - generic [ref=e78]:
+                  - heading "Explore the map" [level=3] [ref=e79]
+                  - paragraph [ref=e80]: Click through the main modules, see how they connect, and follow the start-here reading order.
+        - generic [ref=e81]:
+          - generic [aria-hidden] [ref=e82]:
+            - generic [ref=e83]: GitHub
+            - generic [ref=e88]: AI
+            - generic [ref=e94]: Map
+          - img [aria-hidden] [ref=e100]:
+            - generic [ref=e107]: app
+            - generic [ref=e110]: routes
+            - generic [ref=e113]: lib
+            - generic [ref=e116]: ui
+            - generic [ref=e119]: api
+            - generic [ref=e122]: db
+    - region "What you get" [ref=e125]:
+      - generic [ref=e126]:
+        - heading "What you get" [level=2] [ref=e127]
+        - paragraph [ref=e128]: Every tour has the same four parts, so you always know where to look.
+      - list [ref=e130]:
+        - listitem [ref=e131]:
+          - generic [ref=e134]:
+            - heading "Summary" [level=3] [ref=e140]
+            - paragraph [ref=e141]: A few sentences on what the project does, who it's for, and what it's built with.
+            - generic [aria-hidden] [ref=e143]:
+              - paragraph [ref=e144]: expressjs/express
+              - paragraph [ref=e145]: A small web framework for Node.js that handles routing, requests and responses.
+              - list [ref=e146]:
+                - listitem [ref=e147]: Node.js
+                - listitem [ref=e148]: HTTP
+                - listitem [ref=e149]: Middleware
+        - listitem [ref=e150]:
+          - generic [ref=e153]:
+            - heading "Interactive map" [level=3] [ref=e158]
+            - paragraph [ref=e159]: The main modules as boxes, with lines showing how they connect. Click one to see what it does and which files belong to it.
+            - img [ref=e162]:
+              - generic [ref=e165]: Entry point
+              - generic [ref=e168]: App setup
+              - generic [ref=e171]: Requests
+              - generic [ref=e174]: Responses
+              - generic [ref=e178]: Views
+        - listitem [ref=e181]:
+          - generic [ref=e184]:
+            - heading "Plain-English explanations" [level=3] [ref=e189]
+            - paragraph [ref=e190]: Every module is described in everyday words, so you can follow along without knowing the codebase.
+            - generic [aria-hidden] [ref=e192]:
+              - paragraph [ref=e193]: Responses
+              - paragraph [ref=e194]:
+                - text: Adds helpers like
+                - code [ref=e195]: res.json()
+                - text: and
+                - code [ref=e196]: res.redirect()
+                - text: to every reply your app sends.
+              - paragraph [ref=e197]: lib/response.js
+        - listitem [ref=e198]:
+          - generic [ref=e201]:
+            - heading "Start here" [level=3] [ref=e207]
+            - paragraph [ref=e208]: "A short reading order: the files to open first, and why each one matters."
+            - list [aria-hidden] [ref=e210]:
+              - listitem [ref=e211]:
+                - generic [ref=e212]: "1"
+                - generic [ref=e213]: lib/express.js
+              - listitem [ref=e214]:
+                - generic [ref=e215]: "2"
+                - generic [ref=e216]: lib/application.js
+              - listitem [ref=e217]:
+                - generic [ref=e218]: "3"
+                - generic [ref=e219]: lib/response.js
+    - region "Try a popular repo" [ref=e220]:
+      - heading "Try a popular repo" [level=2] [ref=e221]
+      - paragraph [ref=e222]: Pick one to start its tour right away.
+      - generic [ref=e224]:
+        - generic [ref=e225]:
+          - button "Start a tour of expressjs/express JavaScript 69.6k stars" [ref=e226]:
+            - generic [ref=e227]: Start a tour of
+            - generic [ref=e228]: expressjs/express
+            - generic [ref=e229]: JavaScript
+            - generic [ref=e230]:
+              - text: 69.6k
+              - generic [ref=e233]: stars
+          - button "Start a tour of fastapi/fastapi Python 104.6k stars" [ref=e234]:
+            - generic [ref=e235]: Start a tour of
+            - generic [ref=e236]: fastapi/fastapi
+            - generic [ref=e237]: Python
+            - generic [ref=e238]:
+              - text: 104.6k
+              - generic [ref=e241]: stars
+          - button "Start a tour of spf13/cobra Go 44.9k stars" [ref=e242]:
+            - generic [ref=e243]: Start a tour of
+            - generic [ref=e244]: spf13/cobra
+            - generic [ref=e245]: Go
+            - generic [ref=e246]:
+              - text: 44.9k
+              - generic [ref=e249]: stars
+          - button "Start a tour of BurntSushi/ripgrep Rust 70k stars" [ref=e250]:
+            - generic [ref=e251]: Start a tour of
+            - generic [ref=e252]: BurntSushi/ripgrep
+            - generic [ref=e253]: Rust
+            - generic [ref=e254]:
+              - text: 70k
+              - generic [ref=e257]: stars
+          - button "Start a tour of pmndrs/zustand TypeScript 58.9k stars" [ref=e258]:
+            - generic [ref=e259]: Start a tour of
+            - generic [ref=e260]: pmndrs/zustand
+            - generic [ref=e261]: TypeScript
+            - generic [ref=e262]:
+              - text: 58.9k
+              - generic [ref=e265]: stars
+          - button "Start a tour of redis/redis C 77.3k stars" [ref=e266]:
+            - generic [ref=e267]: Start a tour of
+            - generic [ref=e268]: redis/redis
+            - generic [ref=e269]: C
+            - generic [ref=e270]:
+              - text: 77.3k
+              - generic [ref=e273]: stars
+          - button "Start a tour of sinatra/sinatra Ruby 12.4k stars" [ref=e274]:
+            - generic [ref=e275]: Start a tour of
+            - generic [ref=e276]: sinatra/sinatra
+            - generic [ref=e277]: Ruby
+            - generic [ref=e278]:
+              - text: 12.4k
+              - generic [ref=e281]: stars
+          - button "Start a tour of pallets/flask Python 75.1k stars" [ref=e282]:
+            - generic [ref=e283]: Start a tour of
+            - generic [ref=e284]: pallets/flask
+            - generic [ref=e285]: Python
+            - generic [ref=e286]:
+              - text: 75.1k
+              - generic [ref=e289]: stars
+          - button "Start a tour of axios/axios JavaScript 109.3k stars" [ref=e290]:
+            - generic [ref=e291]: Start a tour of
+            - generic [ref=e292]: axios/axios
+            - generic [ref=e293]: JavaScript
+            - generic [ref=e294]:
+              - text: 109.3k
+              - generic [ref=e297]: stars
+          - button "Start a tour of junegunn/fzf Go 84.1k stars" [ref=e298]:
+            - generic [ref=e299]: Start a tour of
+            - generic [ref=e300]: junegunn/fzf
+            - generic [ref=e301]: Go
+            - generic [ref=e302]:
+              - text: 84.1k
+              - generic [ref=e305]: stars
+          - button "Start a tour of sharkdp/bat Rust 61.3k stars" [ref=e306]:
+            - generic [ref=e307]: Start a tour of
+            - generic [ref=e308]: sharkdp/bat
+            - generic [ref=e309]: Rust
+            - generic [ref=e310]:
+              - text: 61.3k
+              - generic [ref=e313]: stars
+          - button "Start a tour of vercel/swr TypeScript 32.5k stars" [ref=e314]:
+            - generic [ref=e315]: Start a tour of
+            - generic [ref=e316]: vercel/swr
+            - generic [ref=e317]: TypeScript
+            - generic [ref=e318]:
+              - text: 32.5k
+              - generic [ref=e321]: stars
+        - generic [aria-hidden] [ref=e322]:
+          - button [ref=e323]:
+            - generic [ref=e324]: Start a tour of
+            - generic [ref=e325]: expressjs/express
+            - generic [ref=e326]: JavaScript
+            - generic [ref=e327]:
+              - text: 69.6k
+              - generic [ref=e330]: stars
+          - button [ref=e331]:
+            - generic [ref=e332]: Start a tour of
+            - generic [ref=e333]: fastapi/fastapi
+            - generic [ref=e334]: Python
+            - generic [ref=e335]:
+              - text: 104.6k
+              - generic [ref=e338]: stars
+          - button [ref=e339]:
+            - generic [ref=e340]: Start a tour of
+            - generic [ref=e341]: spf13/cobra
+            - generic [ref=e342]: Go
+            - generic [ref=e343]:
+              - text: 44.9k
+              - generic [ref=e346]: stars
+          - button [ref=e347]:
+            - generic [ref=e348]: Start a tour of
+            - generic [ref=e349]: BurntSushi/ripgrep
+            - generic [ref=e350]: Rust
+            - generic [ref=e351]:
+              - text: 70k
+              - generic [ref=e354]: stars
+          - button [ref=e355]:
+            - generic [ref=e356]: Start a tour of
+            - generic [ref=e357]: pmndrs/zustand
+            - generic [ref=e358]: TypeScript
+            - generic [ref=e359]:
+              - text: 58.9k
+              - generic [ref=e362]: stars
+          - button [ref=e363]:
+            - generic [ref=e364]: Start a tour of
+            - generic [ref=e365]: redis/redis
+            - generic [ref=e366]: C
+            - generic [ref=e367]:
+              - text: 77.3k
+              - generic [ref=e370]: stars
+          - button [ref=e371]:
+            - generic [ref=e372]: Start a tour of
+            - generic [ref=e373]: sinatra/sinatra
+            - generic [ref=e374]: Ruby
+            - generic [ref=e375]:
+              - text: 12.4k
+              - generic [ref=e378]: stars
+          - button [ref=e379]:
+            - generic [ref=e380]: Start a tour of
+            - generic [ref=e381]: pallets/flask
+            - generic [ref=e382]: Python
+            - generic [ref=e383]:
+              - text: 75.1k
+              - generic [ref=e386]: stars
+          - button [ref=e387]:
+            - generic [ref=e388]: Start a tour of
+            - generic [ref=e389]: axios/axios
+            - generic [ref=e390]: JavaScript
+            - generic [ref=e391]:
+              - text: 109.3k
+              - generic [ref=e394]: stars
+          - button [ref=e395]:
+            - generic [ref=e396]: Start a tour of
+            - generic [ref=e397]: junegunn/fzf
+            - generic [ref=e398]: Go
+            - generic [ref=e399]:
+              - text: 84.1k
+              - generic [ref=e402]: stars
+          - button [ref=e403]:
+            - generic [ref=e404]: Start a tour of
+            - generic [ref=e405]: sharkdp/bat
+            - generic [ref=e406]: Rust
+            - generic [ref=e407]:
+              - text: 61.3k
+              - generic [ref=e410]: stars
+          - button [ref=e411]:
+            - generic [ref=e412]: Start a tour of
+            - generic [ref=e413]: vercel/swr
+            - generic [ref=e414]: TypeScript
+            - generic [ref=e415]:
+              - text: 32.5k
+              - generic [ref=e418]: stars
+    - region "RepoGuide in numbers" [ref=e419]:
+      - list [ref=e420]:
+        - listitem [ref=e421]:
+          - paragraph [ref=e422]:
+            - generic [ref=e423]: "12"
+            - generic [aria-hidden] [ref=e424]: "0"
+          - paragraph [ref=e425]: example repos to try
+        - listitem [ref=e426]:
+          - paragraph [ref=e427]:
+            - generic [ref=e428]: "7"
+            - generic [aria-hidden] [ref=e429]: "0"
+          - paragraph [ref=e430]: languages among them
+        - listitem [ref=e431]:
+          - paragraph [ref=e432]:
+            - generic [ref=e433]: "40"
+            - generic [aria-hidden] [ref=e434]: "0"
+          - paragraph [ref=e435]: key files the AI reads per tour, at most
+        - listitem [ref=e436]:
+          - paragraph [ref=e437]:
+            - generic [ref=e438]: 20,000
+            - generic [aria-hidden] [ref=e439]: "0"
+          - paragraph [ref=e440]: files a repo can have, at most
+  - contentinfo [ref=e441]:
+    - generic [ref=e442]:
+      - paragraph [ref=e443]: RepoGuide turns a public GitHub repo into a guided tour.
+      - list [ref=e444]:
+        - listitem [ref=e445]:
+          - link "GitHub (opens in a new tab)" [ref=e446] [cursor=pointer]:
+            - /url: https://github.com/Aryav-Agrawal/repoguide
+            - text: GitHub
+            - generic [ref=e449]: (opens in a new tab)
+        - listitem [ref=e450]:
+          - link "LinkedIn (opens in a new tab)" [ref=e451] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/aryav-agrawal
+            - text: LinkedIn
+            - generic [ref=e454]: (opens in a new tab)
+    - paragraph [aria-hidden] [ref=e455]: RepoGuide
+  - button "Open Next.js Dev Tools" [ref=e461] [cursor=pointer]
+  - alert [ref=e465]

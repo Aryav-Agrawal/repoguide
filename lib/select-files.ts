@@ -15,7 +15,7 @@ const MAX_FILE_CHARS = 12_000;
 // Source files bigger than this are almost always data or generated code.
 const MAX_CANDIDATE_BYTES = 200_000;
 // Each file is one GitHub request, so cap the count to protect our rate limit.
-const MAX_FILES = 40;
+export const MAX_FILES = 40;
 // How many GitHub requests may run at the same time.
 const FETCH_CONCURRENCY = 5;
 

@@ -1,0 +1,33 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - paragraph [ref=e4]: RepoGuide
+      - heading "Find your way around any GitHub repo." [level=1] [ref=e11]:
+        - generic [aria-hidden] [ref=e14]: Find
+        - generic [aria-hidden] [ref=e16]: your
+        - generic [aria-hidden] [ref=e18]: way
+        - generic [aria-hidden] [ref=e20]: around
+        - generic [aria-hidden] [ref=e22]: any
+        - generic [aria-hidden] [ref=e24]: GitHub
+        - generic [aria-hidden] [ref=e26]: repo.
+      - paragraph [ref=e28]: "Paste a public repo link and RepoGuide gives you a guided tour: what it does, how it's organized, and which files to read first."
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]: GitHub repo URL
+        - generic [ref=e34]:
+          - textbox "GitHub repo URL" [ref=e36]:
+            - /placeholder: https://github.com/vercel/swr
+          - button "Analyze" [ref=e38] [cursor=pointer]
+      - generic [ref=e45]:
+        - generic [ref=e46]: "Try an example:"
+        - button "expressjs/express JavaScript" [ref=e47]:
+          - generic [ref=e48]: expressjs/express
+          - generic [ref=e49]: JavaScript
+        - button "pallets/flask Python" [ref=e50]:
+          - generic [ref=e51]: pallets/flask
+          - generic [ref=e52]: Python
+        - button "spf13/cobra Go" [ref=e53]:
+          - generic [ref=e54]: spf13/cobra
+          - generic [ref=e55]: Go
+  - button "Open Next.js Dev Tools" [ref=e61] [cursor=pointer]
+  - alert [ref=e65]

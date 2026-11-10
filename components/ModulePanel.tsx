@@ -1,4 +1,8 @@
+"use client";
+
 import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
+import { PANEL_SPRING } from "@/lib/tour-motion";
 import type { AnalysisModule, RepoMetadata } from "@/lib/types";
 import FileLink from "./FileLink";
 
@@ -9,7 +13,8 @@ type ModulePanelProps = {
 };
 
 // Details for the module clicked on the map. On wide screens it sits on top of the map's
-// right side; on narrow screens it sits below the map.
+// right side; on narrow screens it sits below the map. It slides in from the right with a
+// spring (only fades with reduced motion), and stays put while you switch between modules.
 export default function ModulePanel({ module, metadata, onClose }: ModulePanelProps) {
   const panelRef = useRef<HTMLElement>(null);
 
@@ -32,8 +37,12 @@ export default function ModulePanel({ module, metadata, onClose }: ModulePanelPr
   }, [onClose]);
 
   return (
-    <aside
+    <motion.aside
       ref={panelRef}
+      initial={{ opacity: 0, x: 24 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 24 }}
+      transition={PANEL_SPRING}
       aria-label={`${module.name} details`}
       className="z-10 flex flex-col border-t border-line bg-surface lg:absolute lg:inset-y-0 lg:right-0 lg:w-80 lg:border-t-0 lg:border-l"
     >
@@ -83,6 +92,6 @@ export default function ModulePanel({ module, metadata, onClose }: ModulePanelPr
           </ul>
         )}
       </div>
-    </aside>
+    </motion.aside>
   );
 }

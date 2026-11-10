@@ -1,5 +1,6 @@
 // All GitHub API logic lives here. Server code only: it reads GITHUB_TOKEN.
 
+import { cacheLife } from "next/cache";
 import type { ApiErrorCode, RepoMetadata, TreeEntry } from "./types";
 
 const GITHUB_API = "https://api.github.com";
@@ -199,4 +200,38 @@ export async function getFileText(
     "application/vnd.github.raw+json",
   );
   return response.text();
+}
+
+// Star counts for the example repos on the home page (lib/example-repos.ts).
+// "use cache" keeps the answer for about an hour, so the home page doesn't ask GitHub
+// on every visit. It runs on the server only, so the token never reaches the browser.
+// If GitHub can't be reached for a repo, its count is null and the page just hides it:
+// we never show a number we didn't get from GitHub.
+export async function getExampleRepoStars(fullNames: readonly string[]): Promise<Record<string, number | null>> {
+  "use cache";
+  cacheLife("hours");
+
+  const headers: Record<string, string> = {
+    Accept: "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": "RepoGuide",
+  };
+  const token = process.env.GITHUB_TOKEN;
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  const entries = await Promise.all(
+    fullNames.map(async (fullName) => {
+      try {
+        const response = await fetch(`${GITHUB_API}/repos/${fullName}`, { headers });
+        if (!response.ok) return [fullName, null] as const;
+        const data = (await response.json()) as Pick<GitHubRepo, "stargazers_count">;
+        return [fullName, data.stargazers_count] as const;
+      } catch {
+        return [fullName, null] as const;
+      }
+    }),
+  );
+  return Object.fromEntries(entries);
 }

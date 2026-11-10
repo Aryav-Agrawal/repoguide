@@ -48,11 +48,189 @@
   --color-warn-soft: var(--warn-soft);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Shimmer Button (components/ui/shimmer-button.tsx), added by the Magic UI registry. */
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+  --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+  @keyframes shimmer-slide {
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
+  @keyframes spin-around {
+    0% {
+      transform: translateZ(0) rotate(0);
+    }
+    15%,
+    35% {
+      transform: translateZ(0) rotate(90deg);
+    }
+    65%,
+    85% {
+      transform: translateZ(0) rotate(270deg);
+    }
+    100% {
+      transform: translateZ(0) rotate(360deg);
+    }
+  }
+
+  /* Marquee (components/ui/marquee.tsx), added by the Magic UI registry. */
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+/* Hero headline (components/HeroHeadline.tsx): a slow band of accent colour that moves
+   across one word. The rest of the word stays in the normal ink colour. */
+.text-shine {
+  background-image: linear-gradient(
+    100deg,
+    var(--ink) 0%,
+    var(--ink) 40%,
+    var(--accent) 50%,
+    var(--ink) 60%,
+    var(--ink) 100%
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-shine 7s linear infinite;
+}
+
+@keyframes text-shine {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+}
+
+/* With reduced motion: no moving shine, just the normal text colour. */
+@media (prefers-reduced-motion: reduce) {
+  .text-shine {
+    animation: none;
+    background: none;
+    color: inherit;
+  }
 }
 
 body {
   background: var(--background);
   color: var(--ink);
+}
+
+/* Home page background (components/HomeBackground.tsx). Built only from the tokens above. */
+
+/* Fades the whole background out toward the bottom, so it melts into the page. */
+.hero-background {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+/* A still glow in our accent colour. Always drawn, and it's all that phones and
+   reduced-motion visitors see, so it has to look good on its own. */
+.hero-still-gradient {
+  background:
+    radial-gradient(ellipse 70% 55% at 25% -5%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 80% -10%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%);
+}
+
+/* Film grain: a tiny noise texture drawn by the browser from an SVG filter. Static, very faint. */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+}
+
+/* A faint 40px grid in the line colour, fading out toward the edges. */
+.hero-grid {
+  --grid-color: var(--line);
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, black 30%, transparent 75%);
+  opacity: 0.5;
+}
+
+/* The same grid in the accent colour, plus a soft glow. GridSpotlight masks it to a circle around the mouse. */
+.hero-grid-lit {
+  --grid-color: color-mix(in srgb, var(--accent) 28%, transparent);
+  background-color: color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+/* Hero repo graph (components/HeroGraphVisual.tsx). Behind the headline on narrow screens,
+   so it fades out toward the bottom well before the input. */
+.hero-graph {
+  mask-image: radial-gradient(ellipse 60% 55% at 50% 45%, black 35%, transparent 100%);
+}
+
+/* On desktop it sits to the right, with soft edges so it never looks boxed in. */
+@media (min-width: 1024px) {
+  .hero-graph {
+    mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, black 60%, transparent 100%);
+  }
+}
+
+/* Feature cards (components/FeatureCard.tsx): a soft glare that follows the cursor while a card
+   tilts. FeatureCard only shows it on desktop; the position comes from components/ui/3d-card.tsx. */
+.feature-glare {
+  --glare-color: color-mix(in srgb, var(--accent) 12%, transparent);
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    var(--glare-color),
+    transparent 55%
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  .feature-glare {
+    --glare-color: color-mix(in srgb, var(--ink) 9%, transparent);
+  }
+}
+
+/* Example repo strip (components/RepoMarquee.tsx): the chips fade out at both edges. */
+.marquee-fade {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+/* Before the page's JavaScript loads, the strip can't know about reduced motion yet,
+   so stop it here too. Once loaded, RepoMarquee swaps in a static wrapped list. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* Footer wordmark (components/SiteFooter.tsx): large, faded, with a hint of accent. */
+.footer-wordmark {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--ink) 16%, transparent) 0%,
+    color-mix(in srgb, var(--accent) 12%, transparent) 55%,
+    transparent 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* Module map: point React Flow's own colors at our tokens, so it follows light and dark mode. */
@@ -72,14 +250,85 @@ body {
   --xy-attribution-background-color: transparent;
 }
 
+/* React Flow's grey "React Flow" credit link is too faint on white (2.85:1); muted text passes. */
+.react-flow .react-flow__attribution a {
+  color: var(--muted);
+}
+
 .react-flow .react-flow__edge-text {
   font-family: var(--font-geist-mono);
   font-size: 11px;
 }
 
-/* Keyboard users can see which module has focus. */
-.react-flow .react-flow__node:focus-visible {
+/* Keyboard users can see which module has focus.
+   React Flow's own CSS removes the outline with `.react-flow__node.selectable:focus-visible`,
+   and because the map loads later, its CSS comes after this file. The `.selectable` here
+   makes our rule more specific, so it wins no matter which loads first. */
+.react-flow .react-flow__node:focus-visible,
+.react-flow .react-flow__node.selectable:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 0.5rem;
+}
+
+/* Loading placeholders (components/SummarySkeleton.tsx): grey bars with a soft light
+   sweeping across them. With reduced motion the bars stay still. */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  background: color-mix(in srgb, var(--line) 70%, var(--surface));
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--surface) 70%, transparent),
+    transparent
+  );
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    display: none;
+  }
+}
+
+/* Module map boxes (components/ModuleNode.tsx): each one pops in once when the map first
+   appears, a little after the one before it (the delay is set inline). "backwards" keeps the
+   box hidden during its delay and leaves nothing applied once it has finished, so panning,
+   zooming and clicking never animate it again. With reduced motion it only fades. */
+.map-node-enter {
+  animation: map-node-pop 320ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes map-node-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+@keyframes map-node-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-node-enter {
+    animation-name: map-node-fade;
+  }
 }

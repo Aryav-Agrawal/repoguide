@@ -1,0 +1,70 @@
+- generic [active] [ref=f10e1]:
+  - main [ref=f10e2]:
+    - generic [ref=f10e3]:
+      - paragraph [ref=f10e4]: RepoGuide
+      - heading "Find your way around any GitHub repo." [level=1] [ref=f10e11]:
+        - generic [aria-hidden] [ref=f10e14]: Find
+        - generic [aria-hidden] [ref=f10e16]: your
+        - generic [aria-hidden] [ref=f10e18]: way
+        - generic [aria-hidden] [ref=f10e20]: around
+        - generic [aria-hidden] [ref=f10e22]: any
+        - generic [aria-hidden] [ref=f10e24]: GitHub
+        - generic [aria-hidden] [ref=f10e26]: repo.
+      - paragraph [ref=f10e28]: "Paste a public repo link and RepoGuide gives you a guided tour: what it does, how it's organized, and which files to read first."
+    - generic [ref=f10e31]:
+      - generic [ref=f10e32]:
+        - generic [ref=f10e33]: GitHub repo URL
+        - generic [ref=f10e34]:
+          - textbox "GitHub repo URL" [ref=f10e36]:
+            - /placeholder: https://github.com/vercel/swr
+          - button "Analyze" [ref=f10e38] [cursor=pointer]
+      - generic [ref=f10e45]:
+        - generic [ref=f10e46]: "Try an example:"
+        - button "expressjs/express JavaScript" [ref=f10e47]:
+          - generic [ref=f10e48]: expressjs/express
+          - generic [ref=f10e49]: JavaScript
+        - button "pallets/flask Python" [ref=f10e50]:
+          - generic [ref=f10e51]: pallets/flask
+          - generic [ref=f10e52]: Python
+        - button "spf13/cobra Go" [ref=f10e53]:
+          - generic [ref=f10e54]: spf13/cobra
+          - generic [ref=f10e55]: Go
+    - region "How it works" [ref=f10e56]:
+      - generic [ref=f10e57]:
+        - generic [ref=f10e58]:
+          - generic [ref=f10e59]:
+            - heading "How it works" [level=2] [ref=f10e60]
+            - paragraph [ref=f10e61]: Three steps from a repo link to a map you can explore.
+          - list [ref=f10e62]:
+            - listitem [ref=f10e63]:
+              - generic [ref=f10e64]:
+                - generic [aria-hidden] [ref=f10e65]: "1"
+                - generic [ref=f10e66]:
+                  - heading "Paste a link" [level=3] [ref=f10e67]
+                  - paragraph [ref=f10e68]: Drop in any public GitHub repo URL. No sign-up, nothing to install.
+            - listitem [ref=f10e69]:
+              - generic [ref=f10e70]:
+                - generic [aria-hidden] [ref=f10e71]: "2"
+                - generic [ref=f10e72]:
+                  - heading "AI reads the code" [level=3] [ref=f10e73]
+                  - paragraph [ref=f10e74]: RepoGuide picks the files that matter most and has AI read them, so it can explain what each part does.
+            - listitem [ref=f10e75]:
+              - generic [ref=f10e76]:
+                - generic [aria-hidden] [ref=f10e77]: "3"
+                - generic [ref=f10e78]:
+                  - heading "Explore the map" [level=3] [ref=f10e79]
+                  - paragraph [ref=f10e80]: Click through the main modules, see how they connect, and follow the start-here reading order.
+        - generic [ref=f10e81]:
+          - generic [aria-hidden] [ref=f10e82]:
+            - generic [ref=f10e83]: GitHub
+            - generic [ref=f10e88]: AI
+            - generic [ref=f10e94]: Map
+          - img [aria-hidden] [ref=f10e100]:
+            - generic [ref=f10e107]: app
+            - generic [ref=f10e110]: routes
+            - generic [ref=f10e113]: lib
+            - generic [ref=f10e116]: ui
+            - generic [ref=f10e119]: api
+            - generic [ref=f10e122]: db
+  - button "Open Next.js Dev Tools" [ref=f10e130] [cursor=pointer]
+  - alert [ref=f10e134]

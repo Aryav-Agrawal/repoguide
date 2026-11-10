@@ -1,3 +1,16 @@
+@AGENTS.md
+
+## Design rules (UI redesign)
+- Keep the existing design: colours, fonts, spacing, layout and icons. Never swap fonts, themes or the palette unless I ask.
+- Add effects on top of the existing design. Change only what the current step asks for.
+- Use the frontend-design skill for UI work.
+- Libraries: motion (import from "motion/react"), gsap + @gsap/react for scroll animations, lenis on the home page only, @react-three/fiber + drei + postprocessing for the hero graph only, and Magic UI, Aceternity (free) and React Bits components through the shadcn registries. No other animation libraries.
+- Every heavy effect (3D, WebGL, smooth scroll, parallax) checks useCanRunHeavyEffects() and shows a still image or a simple fade when it returns false.
+- 3D and WebGL components are client components loaded with next/dynamic and ssr: false, and pause when off-screen.
+- The React Flow map never gets moving backgrounds, parallax, smooth scroll or continuous animation.
+- Animated text keeps the real text in the page for screen readers.
+- After each step, npm run build must pass, and the page is checked at desktop and phone width.
+
 # RepoGuide
 
 RepoGuide turns a public GitHub repo URL into a guided tour: a summary, an interactive map of the main modules, plain-English explanations, and a "start here" reading order.
